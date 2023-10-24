@@ -1,4 +1,4 @@
-<?
+<?php
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
@@ -6,8 +6,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 
 use Bitrix\Bizproc\FieldType;
 use Bitrix\Main\Localization\Loc;
-use \Bitrix\Main\DI\ServiceLocator;
+use Bitrix\Main\DI\ServiceLocator;
 use Local\Exceptions\IntercomException;
+use Bitrix\Bizproc\Activity\PropertiesDialog;
 
 class CBPIntercomUpdateTicketActivity extends CBPActivity
 {
@@ -79,7 +80,7 @@ class CBPIntercomUpdateTicketActivity extends CBPActivity
      */
     public static function GetPropertiesDialog($documentType, $activityName, $workflowTemplate, $workflowParameters, $workflowVariables, $currentValues = null, $formName = "", $popupWindow = null, $siteId = "")
     {
-        $dialog = new \Bitrix\Bizproc\Activity\PropertiesDialog(__FILE__, [
+        $dialog = new PropertiesDialog(__FILE__, [
             "documentType" => $documentType,
             "activityName" => $activityName,
             "workflowTemplate" => $workflowTemplate,
@@ -109,7 +110,7 @@ class CBPIntercomUpdateTicketActivity extends CBPActivity
     public static function GetPropertiesDialogValues($documentType, $activityName, &$workflowTemplate, &$workflowParameters, &$workflowVariables, $currentValues, &$errors)
     {
         $documentService = CBPRuntime::GetRuntime(true)->getDocumentService();
-        $dialog = new \Bitrix\Bizproc\Activity\PropertiesDialog(__FILE__, [
+        $dialog = new PropertiesDialog(__FILE__, [
             "documentType" => $documentType,
             "activityName" => $activityName,
             "workflowTemplate" => $workflowTemplate,

@@ -1,4 +1,4 @@
-<?
+<?php
 $MESS["INTERCOM_UT_TICKET_ID_FIELD"] = "Ticket Id";
 $MESS["INTERCOM_UT_TICKET_STATE_FIELD"] = "Ticket State";
 $MESS["INTERCOM_UT_FIELD_NOT_SPECIFIED"] = "The \"#FIELD_NAME#\" field is not specified.";
